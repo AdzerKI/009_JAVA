@@ -3,4 +3,21 @@ public class ExThree {
     (возвращает boolean значение).
     Полиндром - Слово или фраза, которые одинаково читаются слева направо и справа налево.*/
 
+    static String solution(String s){
+        String revertString = "";
+        for (int i = s.length() - 1; i >= 0; i--) {
+            revertString += s.charAt(i);
+        }
+
+        String result = "";
+        if (s.equals(revertString)){
+            result = "Строка \"" + s + "\" является палиндромом";
+        } else {
+            result = "Строка \"" + s + "\" не является палиндромом";
+        }
+
+        return result;
+    }
+
+
 }

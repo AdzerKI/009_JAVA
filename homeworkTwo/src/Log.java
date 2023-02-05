@@ -17,16 +17,16 @@ public class Log {
          * 400 - error
          */
 
-        // Дата
+        // пїЅпїЅпїЅпїЅ
         SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date now = new Date();
         String strDate = sdfDate.format(now);
 
-        // Собираем строку лога
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         StringBuilder sb = new StringBuilder();
         sb.append(strDate).append(" - ").append(code).append(" - ").append(module).append(" - ").append(event).append("\n");
 
-        // Записываем в лог файл
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         try (FileWriter fw = new FileWriter(Config.LOGFILE, true)) {
             fw.write(sb.toString());
         } catch (IOException e) {
@@ -54,6 +54,8 @@ public class Log {
         } else {
             logger.log(Level.ALL, text);
         }
+        
+        fileHandler.close();
     }
 
 }
